@@ -1,48 +1,16 @@
-import type { ReactNode } from "react";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "LEVONDOR",
     template: "%s | LEVONDOR",
   },
   description:
     "LEVONDOR, sağlıklı ve uzun yaşam için akıllı teknolojiler geliştirir. WellBalance; supplement takibi ve öneri sistemi odağında ilk ürünümüzdür.",
-  applicationName: "LEVONDOR",
-  keywords: [
-    "longevity",
-    "sağlıklı yaşam",
-    "akıllı teknolojiler",
-    "supplement takibi",
-    "wellbalance",
-    "performans",
-    "estetik",
-    "rehabilitasyon",
-  ],
-  authors: [{ name: "LEVONDOR" }],
   metadataBase: new URL("https://levondor.com"),
-  alternates: {
-    canonical: "https://levondor.com",
-  },
- icons: {
-  icon: [
-    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
-  ],
-  apple: "/apple-touch-icon.png",
-},
+  alternates: { canonical: "https://levondor.com" },
   openGraph: {
     type: "website",
     url: "https://levondor.com",
@@ -51,12 +19,7 @@ export const metadata = {
       "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance: supplement takibi ve öneri sistemi.",
     siteName: "LEVONDOR",
     images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LEVONDOR",
-      },
+      { url: "/og-image.png", width: 1200, height: 630, alt: "LEVONDOR" },
     ],
     locale: "tr_TR",
   },
@@ -69,10 +32,14 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="tr">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Navbar />
         {children}
       </body>
