@@ -13,10 +13,59 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "LEVONDOR",
+  title: {
+    default: "LEVONDOR",
+    template: "%s | LEVONDOR",
+  },
   description:
-    "Sağlıklı ve uzun yaşam için akıllı teknolojiler. Longevity, WellBalance, Sport ve Beauty çözümleri.",
+    "LEVONDOR, sağlıklı ve uzun yaşam için akıllı teknolojiler geliştirir. WellBalance, Longevity, Sport ve Beauty çözümleri.",
+  applicationName: "LEVONDOR",
+  keywords: [
+    "longevity",
+    "sağlıklı yaşam",
+    "akıllı teknolojiler",
+    "supplement takip",
+    "wellbalance",
+    "performans",
+    "estetik",
+  ],
+  authors: [{ name: "LEVONDOR" }],
+  creator: "LEVONDOR",
+  publisher: "LEVONDOR",
+  metadataBase: new URL("https://levondor.com"),
+  alternates: {
+    canonical: "https://levondor.com",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://levondor.com",
+    title: "LEVONDOR",
+    description:
+      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance ilk ürünümüzdür.",
+    siteName: "LEVONDOR",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LEVONDOR",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LEVONDOR",
+    description:
+      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance ilk ürünümüzdür.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

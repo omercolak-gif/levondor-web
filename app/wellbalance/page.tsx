@@ -1,4 +1,14 @@
-export default function WellBalance() {
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "WellBalance",
+  description:
+    "WellBalance, takviye takip ve akıllı öneri platformudur. Geliştirme aşamasındadır.",
+  alternates: {
+    canonical: "https://levondor.com/wellbalance",
+  },
+};export default function WellBalance() {
   return (
     <main className="min-h-screen bg-[#0b1026] text-white">
       <div className="max-w-5xl mx-auto px-6 py-20">
