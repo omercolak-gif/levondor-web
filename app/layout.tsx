@@ -12,14 +12,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-
 export const metadata = {
   title: {
     default: "LEVONDOR",
     template: "%s | LEVONDOR",
   },
-  description:
+  description:.
     "LEVONDOR, sağlıklı ve uzun yaşam için akıllı teknolojiler geliştirir. WellBalance, Longevity, Sport ve Beauty çözümleri.",
   applicationName: "LEVONDOR",
   keywords: [
