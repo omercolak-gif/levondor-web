@@ -36,10 +36,13 @@ export const metadata = {
   alternates: {
     canonical: "https://levondor.com",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+ icons: {
+  icon: [
+    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+  ],
+  apple: "/apple-touch-icon.png",
+},
   openGraph: {
     type: "website",
     url: "https://levondor.com",
