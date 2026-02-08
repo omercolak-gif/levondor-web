@@ -1,4 +1,4 @@
-
+import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -12,36 +12,40 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 export const metadata = {
   title: {
     default: "LEVONDOR",
     template: "%s | LEVONDOR",
   },
-  description:.
-    "LEVONDOR, sağlıklı ve uzun yaşam için akıllı teknolojiler geliştirir. WellBalance, Longevity, Sport ve Beauty çözümleri.",
+  description:
+    "LEVONDOR, sağlıklı ve uzun yaşam için akıllı teknolojiler geliştirir. WellBalance; supplement takibi ve öneri sistemi odağında ilk ürünümüzdür.",
   applicationName: "LEVONDOR",
   keywords: [
     "longevity",
     "sağlıklı yaşam",
     "akıllı teknolojiler",
-    "supplement takip",
+    "supplement takibi",
     "wellbalance",
     "performans",
     "estetik",
+    "rehabilitasyon",
   ],
   authors: [{ name: "LEVONDOR" }],
-  creator: "LEVONDOR",
-  publisher: "LEVONDOR",
   metadataBase: new URL("https://levondor.com"),
   alternates: {
     canonical: "https://levondor.com",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
     url: "https://levondor.com",
     title: "LEVONDOR",
     description:
-      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance ilk ürünümüzdür.",
+      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance: supplement takibi ve öneri sistemi.",
     siteName: "LEVONDOR",
     images: [
       {
@@ -51,33 +55,24 @@ export const metadata = {
         alt: "LEVONDOR",
       },
     ],
+    locale: "tr_TR",
   },
   twitter: {
     card: "summary_large_image",
     title: "LEVONDOR",
     description:
-      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance ilk ürünümüzdür.",
+      "Sağlıklı ve uzun yaşam için akıllı teknolojiler. WellBalance: supplement takibi ve öneri sistemi.",
     images: ["/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
- return (
-  <html lang="tr">
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} bg-[#0b1026] text-white`}
-    >
-      <Navbar />
-      {children}
-    </body>
-  </html>
-);
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="tr">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
 }
