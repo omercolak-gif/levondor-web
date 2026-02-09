@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "LEVONDOR",
-  description: "Longevity Enhancement & Vitality Optimization",
+  description: "Sağlıklı ve uzun yaşam için akıllı teknolojiler",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
